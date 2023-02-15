@@ -19,3 +19,7 @@ def smooth(scores, m = 4):
         y.append(np.mean(l))
     return x, y
 
+def softmax(x, tau):
+    x = np.array(x)
+    e = np.exp(x / tau)
+    return list(e / e.sum())
